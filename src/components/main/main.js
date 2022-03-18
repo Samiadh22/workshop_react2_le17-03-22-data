@@ -1,9 +1,12 @@
-import React from 'react'
-import Cards from './cards'
+import React from 'react';
+import Cards from './cards';
+import {data} from '../../data' ;
+import Table from  './table';
 function main() {
   return (
     <div>
-        <Cards/>
+     <Table data={data}/>
+     {data?.map(ele => <Cards ele={ele}/>) }
     </div>
   )
 }

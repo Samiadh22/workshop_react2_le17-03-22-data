@@ -1,28 +1,20 @@
 import React from 'react';
-import {Row, Card,Col} from 'react-bootstrap';
-import {data} from '../../data' 
-function Cards() { 
-  console.log(data);
-  return (
+import {Card} from 'react-bootstrap';
+
+function Cards({ele}) {
+  
+  return ( 
     <div>
-      
-        <Row xs={1} md={2} className="g-4">
-  {data.map((element, idx) => (
-    <Col key={idx}>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
-          <Card.Title>{`${element.name.split(' ')[0].charAt(0)}${element.name.split(' ')[1].charAt(0)}` }</Card.Title>
+          <Card.Title>{ele.name}</Card.Title>
           <Card.Text>
-            {element.company.name.charAt(0) }
-            {element.company.bs }
-            {element.company.catchPhrase}
+            Some quick example text to build on the card title and make up the bulk of
+            the card's content.
           </Card.Text>
         </Card.Body>
       </Card>
-    </Col>
-  ))}
-</Row>
     </div>
   )
 }
